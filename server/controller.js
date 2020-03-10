@@ -13,18 +13,22 @@ controller.addPlayer = (req, res, next) => {
             throw error
         }
 
-        if (!results.length) {
+        if (results.length) {
+            res.locals.exsists = true;
             return next();
         }
-    })
-
-    db.query(text, val, (error, results) => {
+        db.query(text, val, (error, results) => {
         if (error) {
           throw error
         }
     })
 
     return next();
+    })
+}
+
+controller.winLoss = (req, res, next) => {
+    
 }
 
 module.exports = controller;
