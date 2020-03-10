@@ -19,4 +19,9 @@ app.get('/', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../client/index.html'))
 })
 
+app.post('/add_user', (req, res, next) => {
+    console.log(req.body);
+    return next();
+})
+
 app.listen(port, () => console.log(`Listening on port: ${port}`));
