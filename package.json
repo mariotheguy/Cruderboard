@@ -1,0 +1,25 @@
+{
+  "name": "leaderboard-crud",
+  "version": "1.0.0",
+  "description": "Leaderboard solo project",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js"
+  },
+  "author": "Mario D'Andrea",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "express": "^4.17.1",
+    "pg": "^7.18.2",
+    "react": "^16.13.0"
+  }
+}
