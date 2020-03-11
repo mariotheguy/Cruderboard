@@ -22,13 +22,13 @@ app.get('/', (req, res, next) => {
 
 app.post('/add_user', controller.addPlayer, (req, res, next) => {
     if (res.locals.exsists) {
-        return res.status(200).send("That user is already exsists")
+        return res.status(200).send("That player already exsists")
     }
-    return res.status(200).send("User added");
+    return res.status(200).send("Player added");
 })
 
-app.post('/win_loss', (req, res, next) => {
-    
+app.post('/win_loss', controller.winLoss, (req, res, next) => {
+    return res.status(200).send("Win loss info updated");
 })
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));
