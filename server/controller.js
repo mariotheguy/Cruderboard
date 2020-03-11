@@ -48,4 +48,17 @@ controller.winLoss = (req, res, next) => {
     return next();
 }
 
+controller.deletePlayer = (req, res, next) => {
+    const playerName = [req.body.delPlayer];
+    const delText = 'DELETE FROM "public"."players" WHERE ("player_name" = ($1))';
+
+    db.query(delText, playerName, (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+
+    return next();
+}
+
 module.exports = controller;

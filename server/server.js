@@ -31,4 +31,8 @@ app.post('/win_loss', controller.winLoss, (req, res, next) => {
     return res.status(200).send("Win loss info updated");
 })
 
+app.post('/delete_player', controller.deletePlayer, (req, res, next) => {
+    return res.status(200).send("Player delted");
+})
+
 app.listen(port, () => console.log(`Listening on port: ${port}`));
