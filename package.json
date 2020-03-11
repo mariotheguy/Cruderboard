@@ -4,22 +4,28 @@
   "description": "Leaderboard solo project",
   "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/server.js"
+    "build": "webpack --env.NODE_ENV=production",
+    "start": "nodemon server/server.js --env.NODE_ENV=production",
+    "dev": "concurrently \"webpack-dev-server --open\" \"node server/server.js\"  --env.NODE_ENV=development"
   },
   "author": "Mario D'Andrea",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "babel-loader": "^8.0.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
+    "concurrently": "^5.1.0",
     "express": "^4.17.1",
     "pg": "^7.18.2",
-    "react": "^16.13.0"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "webpack-dev-server": "^3.10.3"
   }
 }

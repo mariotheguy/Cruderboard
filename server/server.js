@@ -17,8 +17,10 @@ app.use(express.json());
 app.get('/', (req, res, next) => {
     res.status(200);
     res.header('content-type: text/html; charset=UTF-8');
-    res.sendFile(path.join(__dirname, '../client/index.html'))
+    res.sendFile(path.join(__dirname, '../index.html'))
 })
+
+app.use('/build', express.static(path.join(__dirname, '../build/bundle.js')))
 
 app.post('/add_user', controller.addPlayer, (req, res, next) => {
     if (res.locals.exsists) {
@@ -34,5 +36,6 @@ app.post('/win_loss', controller.winLoss, (req, res, next) => {
 app.post('/delete_player', controller.deletePlayer, (req, res, next) => {
     return res.status(200).send("Player delted");
 })
+
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));
