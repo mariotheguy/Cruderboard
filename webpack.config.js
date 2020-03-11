@@ -34,6 +34,9 @@ module.exports = env => {return {
     devServer: {
         publicPath: "./build/",
         compress: true,
-        port: 8080
+        port: 8080,
+        proxy: {
+            '/add_user': 'http://localhost:3000/', 
+        }
     }
 }}

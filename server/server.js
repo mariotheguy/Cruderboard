@@ -20,21 +20,25 @@ app.get('/', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../index.html'))
 })
 
-app.use('/build', express.static(path.join(__dirname, '../build/bundle.js')))
+app.use('/build', express.static(path.join(__dirname, '../build/main.js')))
 
 app.post('/add_user', controller.addPlayer, (req, res, next) => {
     if (res.locals.exsists) {
-        return res.status(200).send("That player already exsists")
+        return res.status(200).json("That player already exsists")
     }
-    return res.status(200).send("Player added");
+    return res.status(200).json("Player added");
 })
 
 app.post('/win_loss', controller.winLoss, (req, res, next) => {
-    return res.status(200).send("Win loss info updated");
+    return res.status(200).json("Win loss info updated");
 })
 
 app.post('/delete_player', controller.deletePlayer, (req, res, next) => {
-    return res.status(200).send("Player delted");
+    return res.status(200).json("Player deleted");
+})
+
+app.get('/player_data', (req, res, next) =>  {
+    return res.status(200).json("Data sent");
 })
 
 

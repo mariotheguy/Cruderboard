@@ -61,4 +61,16 @@ controller.deletePlayer = (req, res, next) => {
     return next();
 }
 
+controller.getData = (req, res, next) => {
+    const text = 'SELECT player_name FROM players';
+
+    db.query(text, (error, results) => {
+        if (error) {
+            throw error
+        }
+    })
+
+    return next();
+}
+
 module.exports = controller;
