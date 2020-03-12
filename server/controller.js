@@ -73,7 +73,25 @@ controller.getData = (req, res, next) => {
         return next();
     })
 
+}
+
+controller.getTable = (req, res, next) => {
+    const text1 = 'UPDATE players SET player_net = (player_wins - player_losses)';
+    const text2 = 'SELECT player_name, player_wins, player_losses, player_net FROM players';
     
+    db.query(text1, (error, results) => {
+        if (error) {
+            throw error
+        } 
+        db.query(text2, (error, results) => {
+            if (error) {
+                throw error
+            }
+
+            res.locals.tableResults = results.rows;
+            return next();
+        })
+    })
 }
 
 module.exports = controller;

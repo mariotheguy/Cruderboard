@@ -38,7 +38,8 @@ module.exports = env => {return {
         proxy: {
             '/add_user': 'http://localhost:3000/', 
             '/player_data': 'http://localhost:3000/',
-            '/win_loss': 'http://localhost:3000/'
+            '/win_loss': 'http://localhost:3000/',
+            '/table': 'http://localhost:3000/'
         }
     }
 }}

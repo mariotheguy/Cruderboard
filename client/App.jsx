@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>CRUD-erboar Test</h1>
+        <h1>CRUD-erboar</h1>
         <div id="add-player">
           <form>
             <input ref="player" type="text"/>

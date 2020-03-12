@@ -40,7 +40,8 @@ class Record extends Component{
                 this.setState({
                     names: namesArr
                 });
-            })
+            }
+        )
     }
 
     render() {

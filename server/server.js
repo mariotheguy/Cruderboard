@@ -41,5 +41,9 @@ app.get('/player_data', controller.getData, (req, res, next) =>  {
     return res.status(200).json(res.locals.queryResults);
 })
 
+app.get('/table', controller.getTable, (req, res, next) => {
+    return res.status(200).json(res.locals.tableResults);
+})
+
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));
