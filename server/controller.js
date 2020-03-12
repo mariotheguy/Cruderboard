@@ -68,9 +68,12 @@ controller.getData = (req, res, next) => {
         if (error) {
             throw error
         }
+        // console.log(results)
+        res.locals.queryResults = results.rows;
+        return next();
     })
 
-    return next();
+    
 }
 
 module.exports = controller;

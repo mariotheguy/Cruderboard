@@ -37,8 +37,8 @@ app.post('/delete_player', controller.deletePlayer, (req, res, next) => {
     return res.status(200).json("Player deleted");
 })
 
-app.get('/player_data', (req, res, next) =>  {
-    return res.status(200).json("Data sent");
+app.get('/player_data', controller.getData, (req, res, next) =>  {
+    return res.status(200).json(res.locals.queryResults);
 })
 
 

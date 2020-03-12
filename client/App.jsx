@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   clicked(event) {
-    console.log(this.refs.player.value)
+    // console.log(this.refs.player.value)
     fetch("/add_user", {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -22,8 +22,6 @@ class App extends Component {
       })
     }).then((response) => {
       return response.json();
-    }).then((data) => {
-      console.log(data);
     })
   }
 
@@ -32,8 +30,10 @@ class App extends Component {
       <div>
         <h1>CRUD-erboar Test</h1>
         <div id="add-player">
+          <form>
             <input ref="player" type="text"/>
             <button onClick={ this.clicked }>Add Player</button>
+          </form>
         </div>
         <br/>
         <Record></Record>

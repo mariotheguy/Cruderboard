@@ -37,6 +37,7 @@ module.exports = env => {return {
         port: 8080,
         proxy: {
             '/add_user': 'http://localhost:3000/', 
+            '/player_data': 'http://localhost:3000/'
         }
     }
 }}
