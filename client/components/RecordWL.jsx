@@ -6,19 +6,21 @@ class Record extends Component{
         super();
 
         this.state = {
-            names : []
+            names : [],
+            winName: "",
+            lossName: ""
         };
 
         this.clicked = this.clicked.bind(this);
     }
 
     clicked(event) {
-        fetch("/add_user", {
+        fetch("/win_loss", {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
-            winner: this.refs.player.winner,
-            loser: this.refs.player.loser
+            winner: this.state.winName,
+            loser: this.state.lossName
           })
         }).then((response) => {
           return response.json();
@@ -44,14 +46,20 @@ class Record extends Component{
     render() {
         return (
             <div>
-            <h3>Record Matches</h3>
-            <select id="dropdown" ref="winner">
-                {this.state.names}
-            </select>
-            <select id="dropdown" ref="loser">
-                {this.state.names}
-            </select>
-            <button onClick={ this.clicked }>Submit</button>
+                <h3>Record Matches</h3>
+                <form>
+                    <select id="dropdown" value={this.state.winName} 
+                            onChange={(e) => this.setState({winName: e.target.value})}>
+                        <option value="Select Winner">Select Winner</option>
+                        {this.state.names}
+                    </select>
+                    <select id="dropdown" value={this.state.lossName} 
+                            onChange={(e) => this.setState({lossName: e.target.value})}>
+                        <option value="Select Loser">Select Loser</option>
+                        {this.state.names}
+                    </select>
+                    <button onClick={ this.clicked }>Submit</button>
+                </form>
             </div>
         )
     }
