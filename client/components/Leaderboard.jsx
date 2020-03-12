@@ -38,13 +38,14 @@ class Board extends Component{
         return (
            <div>
                <h3>Cruderboard</h3>
-               <table border="3">
+               <table border="1" align="center" id="table">
                     <tr>
                         <th>Player</th>
                         <th>Wins</th>
                         <th>Losses</th>
                         <th>Net Total</th>
                     </tr>
+                    <br/>
                     {this.state.rows}
                 </table>
            </div> 
