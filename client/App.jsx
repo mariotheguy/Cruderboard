@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Record from './components/RecordWL.jsx'
+import Board from './components/Leaderboard.jsx'
+import DeleteUser from './components/DeleteUser.jsx'
 
 class App extends Component {
   constructor(props){
@@ -28,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>CRUD-erboar</h1>
+        <h1>CRUD-erboard</h1>
         <div id="add-player">
           <form>
             <input ref="player" type="text"/>
@@ -37,6 +39,10 @@ class App extends Component {
         </div>
         <br/>
         <Record></Record>
+        <br/>
+        <Board></Board>
+        <br/>
+        <DeleteUser></DeleteUser>
       </div>
     );
   }

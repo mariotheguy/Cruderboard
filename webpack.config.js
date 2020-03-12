@@ -39,7 +39,8 @@ module.exports = env => {return {
             '/add_user': 'http://localhost:3000/', 
             '/player_data': 'http://localhost:3000/',
             '/win_loss': 'http://localhost:3000/',
-            '/table': 'http://localhost:3000/'
+            '/table': 'http://localhost:3000/',
+            '/delete_player' : 'http://localhost:3000/'
         }
     }
 }}

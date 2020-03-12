@@ -77,7 +77,7 @@ controller.getData = (req, res, next) => {
 
 controller.getTable = (req, res, next) => {
     const text1 = 'UPDATE players SET player_net = (player_wins - player_losses)';
-    const text2 = 'SELECT player_name, player_wins, player_losses, player_net FROM players';
+    const text2 = 'SELECT player_name, player_wins, player_losses, player_net FROM players ORDER BY -(player_net)';
     
     db.query(text1, (error, results) => {
         if (error) {

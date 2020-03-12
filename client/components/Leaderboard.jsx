@@ -16,7 +16,7 @@ class Board extends Component{
                 return response.json()
             })
             .then((data) => {
-                rowsArr = [];
+                let rowsArr = [];
                 for (let i = 0; i < data.length; i++){
                     rowsArr.push(
                         <tr>
@@ -37,7 +37,8 @@ class Board extends Component{
     render() {
         return (
            <div>
-               <table>
+               <h3>Cruderboard</h3>
+               <table border="3">
                     <tr>
                         <th>Player</th>
                         <th>Wins</th>
