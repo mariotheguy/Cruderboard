@@ -31,6 +31,8 @@ controller.addPlayer = (req, res, next) => {
 }
 
 controller.winLoss = (req, res, next) => {
+    if (req.body.winner === req.body.loser) return next();
+
     const valWin = [req.body.winner];
     const valLoss = [req.body.loser];
     const winText = 'Update players Set player_wins = player_wins + 1 Where player_name=($1)';
