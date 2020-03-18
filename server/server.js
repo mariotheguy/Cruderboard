@@ -8,6 +8,8 @@ const controller = require('./controller')
 /**
  * handle parsing request body
  */
+
+//test for commit
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
